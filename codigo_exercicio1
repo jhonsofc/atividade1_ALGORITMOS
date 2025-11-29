@@ -1,0 +1,60 @@
+#include <stdio.h>
+
+int main() {
+    int num1, num2, num3;
+    int soma, subtracao, multiplicacao;
+    float divisao;
+
+    // Solicita ao usuário que digite três números inteiros
+    printf("Digite o primeiro número inteiro: ");
+    scanf("%d", &num1);
+    printf("Digite o segundo número inteiro: ");
+    scanf("%d", &num2);
+    printf("Digite o terceiro número inteiro: ");
+    scanf("%d", &num3);
+
+    // Cálculos aritméticos
+    soma = num1 + num2 + num3;
+    subtracao = num1 - num2 - num3;
+    multiplicacao = num1 * num2 * num3;
+    // Para evitar divisão por zero, verifica se num2 e num3 são diferentes de zero
+    if (num2 != 0 && num3 != 0) {
+        divisao = (float)num1 / num2 / num3;
+    } else {
+        divisao = 0; // Ou poderia exibir uma mensagem de erro
+    }
+
+    printf("\nResultados das operações aritméticas:\n");
+    printf("Soma: %d\n", soma);
+    printf("Subtração: %d\n", subtracao);
+    printf("Multiplicação: %d\n", multiplicacao);
+    if (num2 != 0 && num3 != 0) {
+        printf("Divisão: %.2f\n", divisao);
+    } else {
+        printf("Divisão: Impossível dividir por zero.\n");
+    }
+
+    // Verificações relacionais
+    printf("\nVerificações relacionais:\n");
+    if (num1 > num2)
+        printf("O primeiro número (%d) É maior que o segundo (%d).\n", num1, num2);
+    else
+        printf("O primeiro número (%d) NÃO É maior que o segundo (%d).\n", num1, num2);
+
+    if (num2 < num3)
+        printf("O segundo número (%d) É menor que o terceiro (%d).\n", num2, num3);
+    else
+        printf("O segundo número (%d) NÃO É menor que o terceiro (%d).\n", num2, num3);
+
+    // Verificações lógicas
+    printf("\nVerificações lógicas:\n");
+    int primeiro_positivo = (num1 > 0);
+    int segundo_par = (num2 % 2 == 0);
+    if (primeiro_positivo && segundo_par) {
+        printf("O primeiro número é positivo E o segundo número é par.\n");
+    } else {
+        printf("A condição (primeiro positivo E segundo par) NÃO FOI satisfeita.\n");
+    }
+
+    return 0;
+}
